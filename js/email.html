@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <input id="emails" type="email" placeholder="enter your email"><br>
+    <h1>Domain name search</h1>
+    <input id="value" type="text" placeholder="output"><br>
+    <button id="btn">submit</button>
+   
+    <script>
+        let btn = document.querySelector('#btn');
+        let values = document.querySelector('#value');
+        btn.addEventListener('click', () => {
+            const emails = document.getElementById("emails").value;
+            const emails1 = emails.split('@')[1];
+            const emails2 = emails1.split('.')[0];
+            values.value = emails2;
+        })
+    </script>
+</body>
+
+</html>

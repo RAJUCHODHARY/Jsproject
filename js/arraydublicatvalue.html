@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" placeholder="enter value">
+    <p id="storarray"></p>
+    <button id="btn">removdublicayvalue</button>
+    <p id="sortarray"></p>
+    <script>
+
+        let array = [1, 5,2, 99, 4, 2, 1, 5, 8, 4, 6, 6, 4]
+
+        
+        let removvalue=array.filter((value,index)=>{
+            return array.indexOf(value)===index;
+        })
+        
+        console.log(removvalue)
+    </script>
+</body>
+
+</html>

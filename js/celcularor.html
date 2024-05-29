@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+.perent{
+    margin: auto;
+    width: 500px;
+    background-color: black;
+    height: auto;
+}
+        input {margin-top: 10px;
+            width: 100%;
+            padding: 10px;
+            font-size: 35px;
+        }
+
+        button {
+            margin-block: 10px;
+            margin-left: 5px;
+            width: 90px;
+            padding: 10px;
+            font-size: 40px;
+        }
+        #values{
+            font-size: 25px;
+            color: white;
+        }
+    </style>
+</head>
+
+<body><div class="perent">
+    <input id="firstinput" type="text" placeholder="enter first value"><br><br>
+    <input id="secondinput" type="text" placeholder="enter seconnd value"><br><br>
+    <p id="values"></p>
+    <button id="btn1">+</button>
+    <button id="btn2">-</button>
+    <button id="btn3">*</button>
+    <button id="btn4">/</button>
+    <button id="btn5">%</button></div>
+    <script>
+       let firstinput= document.getElementById('firstinput')
+       let secondinput= document.getElementById('secondinput')
+       let btn1= document.getElementById('btn1')
+       let btn2= document.getElementById('btn2')
+       let btn3= document.getElementById('btn3')
+       let btn4= document.getElementById('btn4')
+       let btn5= document.getElementById('btn5')
+       let values= document.getElementById('values')
+
+       btn1.addEventListener('click',()=>{
+          values.innerText=Number(firstinput.value)+Number(secondinput.value);
+       })
+       btn2.addEventListener('click',()=>{
+        values.innerText=Number(firstinput.value)-Number(secondinput.value);
+       })
+       btn3.addEventListener('click',()=>{
+        values.innerText=Number(firstinput.value)*Number(secondinput.value);
+       })
+       btn4.addEventListener('click',()=>{
+        values.innerText=Number(firstinput.value)/Number(secondinput.value);
+       })
+       btn5.addEventListener('click',()=>{
+        values.innerText=Number(firstinput.value)%Number(secondinput.value);
+       })
+
+
+
+
+    </script>
+</body>
+
+</html>

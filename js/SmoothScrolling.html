@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        header{
+            height: 100vh;
+            padding: 100px;
+        }
+        #btnsection1,#btnsection2{
+            font-size: 20px;
+            padding: 10px;
+        }
+        #section1,#section2{
+            height: 1000px;
+            background-color: blue;
+           font-size: 100px;
+        }
+        #section2{
+            background-color: yellow;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <button id="btnsection1">section1</button>
+        <button id="btnsection2">section2</button>
+    </header>
+    <section id="section1">section1</section>
+    <section id="section2">section2</section>
+
+    <script>
+        let btnsection1=document.querySelector('#btnsection1');
+        let btnsection2=document.querySelector('#btnsection2');
+        let section1=document.querySelector('#section1');
+        let section2=document.querySelector('#section2');
+
+  btnsection1.addEventListener('click',()=>{
+    section1.scrollIntoView({
+        behavior:'smooth'
+    })
+  })
+  btnsection2.addEventListener('click',()=>{
+    section2.scrollIntoView({
+        behavior:'smooth'
+    })
+  })
+    </script>
+
+</body>
+
+</html>

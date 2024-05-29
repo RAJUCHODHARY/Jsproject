@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h1 id="timeprint">00 00 00</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+    <button id="pause">pause</button>
+
+    <script>
+        let timeprint=document.querySelector('#timeprint');
+        let startbtn=document.querySelector('#start');
+        let stopbtn=document.querySelector('#stop');
+        let pausebtn=document.querySelector('#pause');
+
+        let hours=0,minutes=0,seconnd=0,timerInterval;
+
+        stopbtn.disabled=true;
+        pausebtn.disabled=true;
+        timeprint.innerHTML="00 : 00 : 00"
+        
+        function formatTime(time){
+            return time <10 ? "0"+time :time;
+        }
+        
+         function updateTimer(){
+            seconnd++;
+            if(seconnd===60){
+                seconnd=0;
+                minutes++;
+                if(minutes===60){
+                    minutes=0;
+                    hours++;
+                }
+            }
+            timeprint.textContent=formatTime(hours)+":"+formatTime(minutes)+":"+formatTime(seconnd);
+         }
+         startbtn.addEventListener('click',()=>{
+            startbtn.disabled.true;
+            stopbtn.disabled=false;
+            pausebtn.disabled=false;
+
+            timerInterval.setInterval(updateTimer,1000);
+
+         });
+
+         stopbtn.addEventListener('click',()=>{
+            startbtn.disabled.false;
+            stopbtn.disabled=true;
+            pausebtn.disabled=true;
+            hours=0,minutes=0,seconnd=0;
+
+            timeprint.textContent="00:00:00"
+         })
+
+         pausebtn.addEventListener('click',()=>{
+            if(pausebtn.textContent==="pause"){
+                clearInterval(timerInterval);
+                pausebtn.textContent="continue";
+            }else{
+                timerInterval=setInterval(updateTimer,1000);
+                pausebtn.textContent="pause";
+            }
+         });
+
+    </script>
+</body>
+
+</html>

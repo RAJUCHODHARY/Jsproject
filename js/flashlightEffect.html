@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Poppins", sans-serif;
+        }
+        p{
+            font-size: 1rem;
+            text-align: justify;
+            line-height: 1.8em;
+            padding: 0 2em;
+        }
+        #flashligth{
+            --Xpos:50vw;
+            --Ypos:50vh;
+        }
+        #flashligth:before{
+            content: "";
+            display: block;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            pointer-events: none;
+            background: radial-gradient(circle 9em at var(--Xpos) var(--Ypos), rgba(0,0,0,0),rgba(0,0,0,1));
+        }
+        @media screen and (min-width:800px) {
+            body{
+                font-size: 24px;
+            }
+            
+        }
+    </style>
+</head>
+
+<body>
+    <div id="flashligth">
+
+    </div>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores facere necessitatibus aut nihil nostrum dolorem,
+        voluptas animi, sapiente consequuntur at in voluptate, neque vero aspernatur maxime dolor voluptatem aliquid
+        doloremque illum quae et! Assumenda tempore enim libero deserunt eveniet similique dolorem ipsa totam
+        voluptates. Minus officia voluptatum, quisquam unde, iure facilis nesciunt laudantium rem modi impedit sequi hic
+        exercitationem quibusdam.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores facere necessitatibus aut nihil nostrum dolorem,
+        voluptas animi, sapiente consequuntur at in voluptate, neque vero aspernatur maxime dolor voluptatem aliquid
+        doloremque illum quae et! Assumenda tempore enim libero deserunt eveniet similique dolorem ipsa totam
+        voluptates. Minus officia voluptatum, quisquam unde, iure facilis nesciunt laudantium rem modi impedit sequi hic
+        exercitationem quibusdam.</p>
+
+        <script>
+            let mouseX=0;
+            let mouseY=0;
+            let flashligth=document.querySelector('#flashligth');
+
+            const Touchdevice=()=>{
+                try{
+                document.createEvent("TouchEvent");
+                return true;
+                }catch(e){
+                    return false;
+                }
+            };
+            function mouseposition(e){
+                mouseX = ! Touchdevice() ? e.pageX : e.touches[0].pageX;
+                mouseY = ! Touchdevice() ? e.pageY : e.touches[0].pageY;
+
+                flashligth.style.setProperty("--Xpos", mouseX + "px");
+                flashligth.style.setProperty("--Ypos", mouseY + "px");
+
+            }
+            document.addEventListener("mousemove",mouseposition);
+            document.addEventListener("touchmove",mouseposition);
+
+        </script>
+</body>
+
+</html>

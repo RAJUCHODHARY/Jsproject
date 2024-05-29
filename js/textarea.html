@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        textarea{
+            width: 500px;
+            font-size: 25px;
+            font-weight: bold;
+            height: 500px;
+        }
+        .color{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div id="perent">
+        <textarea name="" id="textarea" cols="30" rows="10"></textarea>
+        <p >
+        </p>
+        <h1></h1>
+    </div>
+    <script>
+        let pera=document.querySelector('p');
+        let h1=document.querySelector('h1');
+        let count=100;
+        let x=document.querySelector('textarea');
+      
+        textarea.addEventListener('keyup',()=>{
+          
+        let values1=count-x.value.length;
+           
+        let y=x.value.split("").reverse("").join("");
+        h1.innerHTML=y; 
+            
+        if(values1<=20){
+            pera.style.color="red"
+            
+        }else{
+            pera.style.color="black"
+        }
+        pera.innerHTML=values1; 
+
+        }) 
+    </script>
+</body>
+</html>

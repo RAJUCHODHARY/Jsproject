@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="inputs"><br>
+    <p id="pera"></p>
+    <button id="btn">submit</button>
+    <br>
+    <button id="reversArray">reverseArrayprint</button>
+
+
+    <script>
+        let inputs = document.querySelector('#inputs');
+        let pera = document.querySelector('#pera');
+        let btn = document.querySelector('#btn');
+        let reversArray = document.querySelector('#reversArray');
+        let arrays = [];
+        btn.addEventListener('click', () => {
+            let inpt = inputs.value;
+            arrays.push(inpt);
+            pera.innerHTML = arrays;
+            inputs.value = "";
+        })
+        let i = 0;
+        reversArray.addEventListener('click', () => {
+           pera.innerHTML =" "
+            arrays.reverse();
+
+            
+                setInterval(() => {
+                    if(i==arrays.length)return;
+                    pera.innerHTML += arrays[i] + " " ; 
+                    console.log(arrays[i])
+                    i++
+                }, 1000)
+            
+
+        })
+
+    </script>
+</body>
+
+</html>

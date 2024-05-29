@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .contaner {
+            width: 700px;
+            height: 500px;
+            border: 1px solid gray;
+        }
+
+        p {
+            margin-top: 10px;
+            padding: 10px 0;
+            font-size: 20px;
+            /* background-color: red; */
+        }
+
+        button {
+            width: 150px;
+            background-color: bisque;
+            padding: 8px;
+            font-size: 20px;
+            margin: 8px;
+        }
+
+        .futtor {
+            margin-top: 70px;
+        }
+        .para{
+            background-color: red;;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="contaner">
+        <p>(1) Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cupiditate, consequatur!</p>
+        <p>(2) Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cupiditate, consequatur!</p>
+        <p>(3) Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cupiditate, consequatur!</p>
+        <p>(4) Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cupiditate, consequatur!</p>
+        <p>(5) Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cupiditate, consequatur!</p>
+        <p>(6) Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cupiditate, consequatur!</p>
+        <p>(7) Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cupiditate, consequatur!</p>
+        <div class="futtor"><button class="add2">add 2 para</button><button class="add5">add 5 para</button><button
+                class="add3"> add 3 para</button><button class="addall">add all</button></div>
+    </div>
+
+    <script>
+        let add2 = document.querySelector(".add2");
+        let add5 = document.querySelector(".add5");
+        let add3 = document.querySelector(".add3");
+        let addall= document.querySelector(".addall");
+        let para=document.querySelectorAll(".contaner p")
+
+        add2.addEventListener('click',()=>{
+            for(let i=0;i<para.length;i++){
+                para[i].classList.remove('para');
+            }
+            for(let i=0;i<2;i++){
+            para[i].classList.add('para');
+            }
+            
+        })
+        add3.addEventListener('click',()=>{
+            for(let i=0;i<para.length;i++){
+                para[i].classList.remove('para');
+            }
+            for(let i=0;i<3;i++){
+            para[i].classList.add('para');
+            }
+        })
+        add5.addEventListener('click',()=>{
+            for(let i=0;i<para.length;i++){
+                para[i].classList.remove('para');
+            }
+            for(let i=0;i<5;i++){
+            para[i].classList.add('para');
+            }
+        })
+        addall.addEventListener('click',()=>{
+            for(let i=0;i<para.length;i++){
+                para[i].classList.remove('para');
+            }
+            for(let i=0;i<para.length;i++){
+            para[i].classList.add('para');
+            }
+        })
+
+    </script>
+</body>
+
+</html>

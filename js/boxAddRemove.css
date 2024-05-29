@@ -1,0 +1,22 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+#box{
+    width: 90%;
+    margin: 2rem auto;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+.box{
+    width: 23%;
+}
+.box11{
+    transform: rotate(180deg);
+}
+
+.none{
+    display: none;
+}
